@@ -1,0 +1,24 @@
+
+sudo docker pull danjarvis/tensorflow-android:1.0.0
+
+sudo docker run -it -v $HOME/tf_files:/tf_files danjarvis/tensorflow-android:1.0.0
+
+cd /tensorflow
+python tensorflow/examples/image_retraining/retrain.py \
+--bottleneck_dir=/tf_files/bottlenecks \
+--how_many_training_steps 100000 \
+--model_dir=/tf_files/inception \
+--summaries_dir=/tf_files/training_summaries/basic \
+--output_graph=/tf_files/retrained_graph.pb \
+--output_labels=/tf_files/retrained_labels.txt \
+--image_dir /tf_files/images
+
+bazel build --local_resources 4096,4.0,1.0 -j 1 tensorflow/python/tools:strip_unused
+
+bazel-bin/tensorflow/python/tools/strip_unused \
+--input_graph=/tf_files/retrained_graph.pb \
+--output_graph=/tf_files/stripped_retrained_graph.pb \
+--input_node_names="Mul" \
+--output_node_names="final_result" \
+--input_binary=true
+
