@@ -1,7 +1,7 @@
 # Skin Deep
 *Android App to determine malignancy of skin lesions with 88.5% accuracy*
 
-<img src="Screenshot.png" width="100">
+<img src="Screenshot.png" width="200">
 
 
 ## Disclaimer
