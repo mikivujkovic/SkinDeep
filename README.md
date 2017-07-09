@@ -120,7 +120,7 @@ $ bazel-bin/tensorflow/python/tools/strip_unused \
 to strip the tensorflow model.
 You will get the stripped_retrained_graph.pb file in your tf_files folder.
 
-* copy model files stripped_retrained_graph.pb and retrained_labels.txt to tf_files/SkinDeepApp/assets
+* copy model files stripped_retrained_graph.pb and retrained_labels.txt to SkinDeepApp/assets
 
 * open SkinDeepApp folder in Android Studio, connect your android device,
 run the app and choose your device from the Select Deployment Target dialog.
