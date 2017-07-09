@@ -28,7 +28,7 @@ Both the source code and the datasets are provided to foster future research in 
 
 ## How to build it
 
-If you just want to try the app, download the apk from <www.mikely.net/SkinDeep.apk>.
+If you just want to try the app, download the apk from www.mikely.net/SkinDeep.apk.
 
 If you want to build it on your own, these are the steps needed:
 
